@@ -43,9 +43,11 @@ public class CoffeeController extends DefaultController {
 
     @Route(method = HttpMethod.POST, uri = "/{name}")
     public Result buy(@Parameter("name") @NotNull @Size(min = 3, max = 150) String name) throws NoMoreCoffeeException {
-        final Beverage beverage = service.buy(name);
-        publisher.publish("/coffee/last", name);
-        return ok(beverage).json();
+        return async(() -> {
+            final Beverage beverage = service.buy(name);
+            publisher.publish("/coffee/last", name);
+            return ok(beverage).json();
+        });
     }
 
 }
