@@ -5,7 +5,6 @@ import org.wisdom.api.annotations.Service;
 import org.wisdom.coffee.api.*;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

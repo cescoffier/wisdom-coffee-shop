@@ -1,8 +1,6 @@
 package org.wisdom.coffee.api;
 
 
-import java.net.URL;
-
 public class DefaultCoffee implements Coffee {
 
     private String name;
