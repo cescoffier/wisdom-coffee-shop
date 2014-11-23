@@ -1,5 +1,5 @@
 function registerWebSocket() {
-    var ws = $.gracefulWebSocket("ws://" + window.location.host + "/coffee/last");
+    var ws = $.easyWebSocket("ws://" + window.location.host + "/coffee/last");
     ws.onmessage = function (event) {
         var messageFromServer = event.data;
         $("ul.bought").append($("<li>An " + messageFromServer + " was bought.</li>"));
